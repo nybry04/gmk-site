@@ -33,6 +33,10 @@ export default function RootLayout({ children }) {
           <div className='mt-24 pl-1 pr-1 md:pl-10 md:pr-10'>
             {children}
           </div>
+          <div className='bg-slate-900 text-slate-500 fixed bottom-0 w-full flex flex-row gap-5 justify-center'>
+            <Link href={'/polzovatelskoe-soglashenie'}>Пользовательское соглашение</Link>
+            <Link href={'/obrabotka-dannyh'}>Обработка данных</Link>
+          </div>
       </body>
     </html>
   )
