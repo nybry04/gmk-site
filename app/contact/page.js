@@ -11,6 +11,13 @@ export default function Contact() {
                     <div className="p-2">ВК</div>
                     <Link href={'https://vk.com/get_my_key'} className="p-2">https://vk.com/get_my_key</Link>
                 </div>
+
+                <div className="text-white text-5xl">Дополнительно</div>
+
+                <div className="text-white text-lg flex flex-col gap-1 pt-5">
+                    <Link href={'/polzovatelskoe-soglashenie'}>Пользовательское соглашение</Link>
+                    <Link href={'/obrabotka-dannyh'}>Обработка данных</Link>
+                </div>
             </div>
         </>
     )
