@@ -1,4 +1,3 @@
-'use client'
 import Link from 'next/link'
 import './globals.css'
 import Image from 'next/image'
@@ -17,8 +16,7 @@ export default function RootLayout({ children }) {
               href={'/'}
             >
               <Image
-                loader={() => "https://sun9-62.userapi.com/impg/Eha2ZpOEppOL1o8NbogwMtEy2b112xLDLWwiAw/lFLmIXwAvjU.jpg?size=2438x2438&quality=95&sign=e28cf586f26723abcc8ea1d09bd6cd9a&type=album"}
-                src="https://sun9-62.userapi.com/impg/Eha2ZpOEppOL1o8NbogwMtEy2b112xLDLWwiAw/lFLmIXwAvjU.jpg?size=2438x2438&quality=95&sign=e28cf586f26723abcc8ea1d09bd6cd9a&type=album"
+                src="/logo.jpg"
                 width={50}
                 height={50}
                 alt="Logo"
