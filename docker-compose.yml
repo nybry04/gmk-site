@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.25.1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/config.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certbot:/var/www/certbot/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./nginx/certbot:/var/www/certbot/:ro
