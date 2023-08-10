@@ -17,6 +17,7 @@ export default function Contact() {
                 <div className="text-white text-lg flex flex-col gap-1 pt-5">
                     <Link href={'/polzovatelskoe-soglashenie'}>Пользовательское соглашение</Link>
                     <Link href={'/obrabotka-dannyh'}>Обработка данных</Link>
+                    <Link href={'/konfidencialnost'}>Политика конфиденциальности</Link>
                 </div>
             </div>
         </>

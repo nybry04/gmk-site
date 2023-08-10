@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export default function Index() {
     const [index, setIndex] = useState(0)
-    const [modalShow, setModalShow] = useState(false)
+    const [modalShow, setModalShow] = useState(true)
     const items = [
         {
             image: '/gold.jpg',
@@ -24,7 +24,9 @@ export default function Index() {
             <br/>
             Посмотрите наши отзывы за 8 лет работы: https://vk.com/topic-89671768_31757173<br/>
             <br/>
-            Моментальное получение товара: vk.me/get_my_key<br/>`
+            Товар приходит на почту
+            <br/>
+            Гарантии магазина: https://gmkbot.ru/polzovatelskoe-soglashenie<br/>`
         },
         {
             image: '/premium.jpg',
@@ -41,7 +43,9 @@ export default function Index() {
             <br/>
             Посмотрите наши отзывы за 8 лет работы: https://vk.com/topic-89671768_31757173<br/>
             <br/>
-            Моментальное получение товара: vk.me/get_my_key<br/>`
+            Товар приходит на почту
+            <br/>
+            Гарантии магазина: https://gmkbot.ru/polzovatelskoe-soglashenie<br/>`
         },
         {
             image: '/narod.jpg',
@@ -55,7 +59,9 @@ export default function Index() {
             <br/>
             Посмотрите наши отзывы за 8 лет работы: https://vk.com/topic-89671768_31757173<br/>
             <br/>
-            Моментальное получение товара: vk.me/get_my_key<br/>`
+            Товар приходит на почту
+            <br/>
+            Гарантии магазина: https://gmkbot.ru/polzovatelskoe-soglashenie<br/>`
         }
     ]
 
@@ -89,8 +95,36 @@ export default function Index() {
                 <div className={"fixed left-0 right-0 top-0 bottom-0 m-auto"} style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}>
                 <div className="fixed left-0 right-0 top-3 m-auto bg-slate-800 w-5/6 h-5/6 rounded-md p-5">
                     <div className="text-white text-2xl font-bold">{items[index].title}</div>
-                    <div className="relative text-white text-sm overflow-y-auto h-5/6" dangerouslySetInnerHTML={{__html: items[index].description}}></div>
+                    <div className="relative text-white text-sm overflow-y-auto h-4/6" dangerouslySetInnerHTML={{__html: items[index].description}}></div>
                     {/* <div className="text-white font-bold pt-3 pb-3">{items[index].price} RUB</div> */}
+                    <div class="flex">
+                        <div class="mb-3 xl:w-96">
+                            <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-white"
+                            >Email</label>
+                            <input
+                                type="text"
+                                class="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-white
+                                    bg-slate-700 bg-clip-padding
+                                    border border-solid border-slate-700
+                                    rounded
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-white focus:bg-slate-600 focus:border-blue-600 focus:outline-none
+                                "
+                                id="exampleFormControlInput1"
+                                placeholder="Email"
+                            />
+                        </div>
+                    </div>
                     <div className="w-full flex flex-row gap-1 pt-3">
                         <button onClick={() => {
                             setModalShow(false)
