@@ -52,7 +52,7 @@ export default function Index() {
             image: '/narod.jpg',
             title: 'Народный Рандом',
             price: 105,
-            description: `Из этого кейса вы получите игру до 1999 рублей<br/>.
+            description: `Из этого кейса вы получите игру до 1999 рублей.<br/>
             <br/>
             Мы вручную отбираем самые лучшие игры в наши кейсы. Наша задача: всегда стараться радовать вас качеством наших товаров!<br/>
             <br/>
@@ -96,12 +96,10 @@ export default function Index() {
                 <div className={"fixed left-0 right-0 top-0 bottom-0 m-auto"} style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}>
                 <div className="fixed left-0 right-0 top-3 m-auto bg-slate-800 w-5/6 h-5/6 rounded-md p-5">
                     <div className="text-white text-2xl font-bold">{items[index].title}</div>
-                    <div className="relative text-white text-sm overflow-y-auto h-[60%]" dangerouslySetInnerHTML={{__html: items[index].description}}></div>
+                    <div className="relative text-white text-sm overflow-y-auto h-[56%]" dangerouslySetInnerHTML={{__html: items[index].description}}></div>
                     {/* <div className="text-white font-bold pt-3 pb-3">{items[index].price} RUB</div> */}
-                    <div class="flex justify-center">
+                    <div class="mt-5 flex justify-center flex-col md:flex-row items-center">
                         <div class="mb-3 xl:w-96">
-                            <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-white"
-                            >Email</label>
                             <input
                                 type="text"
                                 class="
@@ -125,7 +123,7 @@ export default function Index() {
                                 placeholder="Email"
                             />
                         </div>
-                        <div className="ml-3 text-white h-full">
+                        <div className="ml-3 text-white mb-3">
                             <input id="agreecheckbox" type="checkbox" className="inline-block mr-1"/>
                             Я согласен с <Link href={'/polzovatelskoe-soglashenie'} className="underline">правилами/условиями</Link> магазина
                         </div>
