@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export default function Index() {
     const [index, setIndex] = useState(0)
-    const [modalShow, setModalShow] = useState(true)
+    const [modalShow, setModalShow] = useState(false)
     const items = [
         {
             image: '/gold.jpg',
