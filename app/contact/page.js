@@ -13,8 +13,8 @@ export default function Contact() {
                         <div className="p-2">kislobloger@vk.com</div>
                     </div>
                     <div className="flex">
-                        <div className="p-2">Почта</div>
-                        <div className="p-2">kislobloger@vk.com</div>
+                        <div className="p-2">Номер телефона</div>
+                        <div className="p-2">+79507642548</div>
                     </div>
                     
                     <div className="flex">

@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
               <Link className='text-white text-md' href={'/contact'}>Контакты</Link>
             </div>
           </div>
-          <div className='mt-24 pl-1 pr-1 md:pl-10 md:pr-10'>
+          <div className='mt-24 pl-1 pr-1 md:pl-10 md:pr-10 mb-48'>
             {children}
           </div>
           <div className='bg-slate-900 text-slate-500 fixed bottom-0 w-full flex flex-col'>
