@@ -6,10 +6,25 @@ export default function Contact() {
     return (
         <>
             <div className="bg-slate-900 p-5 rounded-md shadow-xl">
-                <div className="text-white text-5xl">Контакты</div>
-                <div className="pt-5 flex text-white text-lg">
-                    <div className="p-2">ВК</div>
-                    <Link href={'https://vk.com/get_my_key'} className="p-2">https://vk.com/get_my_key</Link>
+                <div className="text-white text-5xl">Сотрудничество и поддержка</div>
+                <div className="pt-5 flex flex-col text-white text-lg">
+                    <div className="flex">
+                        <div className="p-2">Почта</div>
+                        <div className="p-2">kislobloger@vk.com</div>
+                    </div>
+                    <div className="flex">
+                        <div className="p-2">Почта</div>
+                        <div className="p-2">kislobloger@vk.com</div>
+                    </div>
+                    
+                    <div className="flex">
+                        <div className="p-2">ВКонтакте</div>
+                        <Link href={'https://vk.com/get_my_key'} className="p-2">https://vk.com/get_my_key</Link>
+                    </div>
+                    <div className="flex">
+                        <div className="p-2">Телеграм</div>
+                        <div className="p-2">@kislobloger000</div>
+                    </div>
                 </div>
 
                 <div className="text-white text-5xl">Дополнительно</div>

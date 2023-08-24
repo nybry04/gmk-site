@@ -68,7 +68,27 @@ export default function Index() {
 
     return (
         <>
-            <div className="flex gap-2 flex-wrap">
+            <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-5 m-1 shadow-md rounded-md w-full md:w-auto flex items-center">
+                <Image
+                    src={'/adware.jpg'}
+                    width={400}
+                    height={1_000_000}
+                    alt={'logo2'}
+                    className="rounded-xl shadow-2xl"
+                />
+                <div className="ml-3 text-white">
+                    <div>Вручную отбираем интересные игры.</div>
+                    <br />
+                    <div>Делимся подборками годных игр, которые проверяем сами. Никакого шлака и индюшатины с плохими отзывами.</div>
+                    <br />
+                    <div>Добавляем годноту в кейсы с окупаемостью. Возвращаем деньги, если игра окажется дешевле, чем заявлено в описании товара.</div>
+                    <br />
+                    <div>Более 1 000 отзывов за 8 лет работы: <Link href='vk.com/topic-89671768_31757173'>vk.com/topic-89671768_31757173</Link></div>
+                    <br />
+                    <div>💙 Нам важно, чтобы вам понравилось у нас и вы стали нашим постоянным клиентом.</div>
+                </div>
+            </div>
+            <div className="flex gap-2 flex-wrap justify-around">
                 {items.map((value, index) => (
                     <div key={index} className="bg-slate-900 p-5 shadow-md rounded-md w-full md:w-auto flex-col flex items-center">
                         <Image
