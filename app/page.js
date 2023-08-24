@@ -68,7 +68,7 @@ export default function Index() {
 
     return (
         <>
-            <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-5 m-1 shadow-md rounded-md w-full md:w-auto flex items-center">
+            <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-5 m-1 shadow-md rounded-md w-full md:w-auto flex-col md:flex-row flex items-center">
                 <Image
                     src={'/adware.jpg'}
                     width={400}
