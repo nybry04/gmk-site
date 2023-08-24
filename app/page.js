@@ -90,7 +90,10 @@ export default function Index() {
             </div>
             <div className="flex gap-2 flex-wrap justify-around">
                 {items.map((value, index) => (
-                    <div key={index} className="bg-slate-900 p-5 shadow-md rounded-md w-full md:w-auto flex-col flex items-center">
+                    <div key={index} onClick={() => {
+                        setIndex(index)
+                        setModalShow(true)
+                    }} className="bg-slate-900 p-5 shadow-md rounded-md w-full md:w-auto flex-col flex items-center">
                         <Image
                             src={value.image}
                             width={250}
