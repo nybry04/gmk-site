@@ -10,3 +10,5 @@ services:
       - /etc/letsencrypt/live/gmkbot.ru-0001/fullchain.pem:/fullchain.pem:ro
       - /etc/letsencrypt/live/gmkbot.ru-0001/privkey.pem:/privkey.pem:ro
       - ./out:/usr/share/nginx/html
+  back:
+    build: ./backend
