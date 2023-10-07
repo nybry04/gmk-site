@@ -41,8 +41,8 @@ class LavaAPI:
         sign = hmac.new(bytes(self.api_token, 'UTF-8'), jsonStr, hashlib.sha256).hexdigest()
         return sign
 
-    def create_invoice(self, orderId: int, sum: float, hookUrl: str, successUrl: str, custom_fields: str):
-        data = { "shopId": self.shop_id, "orderId": orderId, "sum": str(sum), "hookUrl": hookUrl, "successUrl": successUrl, "custom_fields": custom_fields }
+    def create_invoice(self, orderId: int, sum: float, hookUrl: str, successUrl: str, comment: str):
+        data = { "shopId": self.shop_id, "orderId": orderId, "sum": str(sum), "hookUrl": hookUrl, "successUrl": successUrl, "comment": comment }
 
         headers = self.headers
         headers['Signature'] = self.signer_func(data)
@@ -74,8 +74,8 @@ def generate_payment():
     sum = float(request.args.get('sum'))
     hookUrl = request.args.get('hook')
     successUrl = request.args.get('success')
-    customFields = request.args.get('fields')
-    resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, customFields)
+    comment = request.args.get('comment')
+    resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, comment)
     return Response(resp, mimetype='application/json')
 
 
