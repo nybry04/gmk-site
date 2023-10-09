@@ -217,7 +217,7 @@ export default function Index() {
                             setModalCount(1)
                         }} className="text-white bg-red-500 hover:bg-red-400 rounded-md shadow-xl w-full p-3">Отмена</button>
                         <button className="text-white bg-green-500 hover:bg-green-400 rounded-md shadow-xl w-full p-3" onClick={() => {
-                            window.location.replace('https://gmkbot.ru/gpr?a=' + (items[index].price * modalCount))
+                            window.location.replace('https://gmkbot.ru/generate-payment?a=' + (items[index].price * modalCount))
                         }}>Купить за {items[index].price * modalCount}</button>
                     </div>
                     </div>
