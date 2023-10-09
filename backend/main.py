@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import Response
+from flask import redirect
 import uuid
 import hmac
 import hashlib
@@ -70,6 +71,14 @@ def generate_payment():
     comment = request.args.get('comment')
     resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, comment)
     return Response(resp, mimetype='application/json')
+
+@app.route('/gpr')
+def gpr():
+    sum = float(request.args.get('a'))
+    resp = lava.create_invoice(random.randint(100, 1_000_000), sum, 'https://vk.com', 'https://vk.com', '1')
+    d = json.loads(resp)
+    return redirect(d['data']['url'], code=301)
+
 
 @app.route('/check-payment')
 def check_payment():
