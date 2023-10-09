@@ -65,7 +65,7 @@ lava = LavaAPI(SECRET_KEY, SHOP_ID)
 
 @app.route('/generate-payment')
 def generate_payment():
-    if request.args.get('a') == None:
+    if request.args.get('a') is None:
         sum = float(request.args.get('a'))
         resp = lava.create_invoice(random.randint(100, 1_000_000), sum, 'https://vk.com', 'https://vk.com', '1')
         d = json.loads(resp)
