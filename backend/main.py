@@ -50,24 +50,17 @@ class LavaAPI:
         resp = requests.post("https://api.lava.ru/business/invoice/create", json=data, headers=headers)
         print(resp.content.decode('utf-8').replace("'", '"'))
         return resp.content.decode('utf-8').replace("'", '"')
+    
+    def check_invoice(self, invoiceId: str):
+        data = { "shopId": self.shop_id, "invoiceId": invoiceId }
+        headers = self.headers
+        headers['Signature'] = self.signer_func(data)
+        resp = requests.post("https://api.lava.ru/business/invoice/status", json=data, headers=headers)
+        print(resp.content.decode('utf-8').replace("'", '"'))
+        return resp.content.decode('utf-8').replace("'", '"')
 
 app = Flask(__name__)
 lava = LavaAPI(SECRET_KEY, SHOP_ID)
-
-@app.route('/site-ok', methods=['POST'])
-def site_ok():
-    print('siteok')
-    cf = str(request.get_json()['custom_fields'])
-    # sum:count:email:text
-    sum = cf.split(':')[0]
-    count = cf.split(':')[1]
-    email = cf.split(':')[2]
-    text = cf.split(':')[3]
-    resp = requests.post(
-        url=f'https://api.vk.com/method/messages.send?access_token={VK_GROUP_TOKEN}&user_id={ADMIN_ID}&random_id=0&message={urllib.parse.quote(f"Покупка через сайт. Сумма: {sum} Количество: {count} Почта: {email} Дополнительно: {text}")}&v=5.131'
-        )
-    print(str(resp.content))
-    return 'ok'
 
 @app.route('/generate-payment')
 def generate_payment():
@@ -78,5 +71,10 @@ def generate_payment():
     resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, comment)
     return Response(resp, mimetype='application/json')
 
+@app.route('/check-payment')
+def check_payment():
+    invoice = request.args.get("id")
+    resp = lava.check_invoice(invoice)
+    return Response(resp, mimetype='application/json')
 
 app.run(host='0.0.0.0', port=9181)
