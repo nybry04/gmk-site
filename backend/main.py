@@ -61,6 +61,7 @@ class LavaAPI:
         return resp.content.decode('utf-8').replace("'", '"')
 
 app = Flask(__name__)
+app.debug = True
 lava = LavaAPI(SECRET_KEY, SHOP_ID)
 
 @app.route('/generate-payment')
