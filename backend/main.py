@@ -71,6 +71,8 @@ def generate_payment():
     comment = request.args.get('comment')
     r = request.args.get('r')
     resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, comment)
+    print(r == None)
+    print(r is None)
     if r:
         d = json.loads(resp)
         return redirect(d['data']['url'], code=301)
