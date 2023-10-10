@@ -65,17 +65,17 @@ lava = LavaAPI(SECRET_KEY, SHOP_ID)
 
 @app.route('/generate-payment')
 def generate_payment():
-    if request.args.get('a', '0') != '0':
-        sum = float(request.args.get('a'))
-        resp = lava.create_invoice(random.randint(100, 1_000_000), sum, 'https://vk.com', 'https://vk.com', '1')
-        d = json.loads(resp)
-        return redirect(d['data']['url'], code=301)
     sum = float(request.args.get('sum'))
     hookUrl = request.args.get('hook')
     successUrl = request.args.get('success')
     comment = request.args.get('comment')
+    r = request.args.get('r')
     resp = lava.create_invoice(random.randint(100, 1_000_000), sum, hookUrl, successUrl, comment)
-    return Response(resp, mimetype='application/json')
+    if r:
+        d = json.loads(resp)
+        return redirect(d['data']['url'], code=301)
+    else:
+        return Response(resp, mimetype='application/json')
 
 @app.route('/check-payment')
 def check_payment():
